@@ -1,0 +1,47 @@
+.wrapper
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          GroupName
+        %ul.left-header__members
+          Member：
+          %li.member
+            MemberName
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            neko
+          .upper-message__date
+            2019/08/26
+        .lower-meesage
+          .lower-message__content
+            message
+      .message
+        .upper-message
+          .upper-message__user-name
+          .upper-message__date
+        .lower-meesage
+          .lower-message__content
+      .message
+        .upper-message
+          .upper-message__user-name
+          .upper-message__date
+        .lower-meesage
+          .lower-message__content
+    .form
+      %form
+        %input.form__message{placeholder: 'type a message'}
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
+        
