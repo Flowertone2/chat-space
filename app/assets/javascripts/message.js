@@ -1,50 +1,32 @@
 $(function(){
  function buildHTML(message){
-      if ( message.image ) {
-        var html =
-        `<div class="message" data-message-id=${message.id}>
-            <div class="upper-message">
-              <div class="upper-message__user-name">
-                ${message.user_name}
-              </div>
-              <div class="upper-message__date">
-                ${message.date}
-              </div>
+ 
+      var img = message.image ? `<img src=${message.image} ></img>` : "";
+      var html =
+      `<div class="message" data-message-id=${message.id}>
+          <div class="upper-message">
+            <div class="upper-message__user-name">
+              ${message.user_name}
             </div>
-            <div class="lower-message">
-              <p class="lower-message__content">
-                ${message.content}
-              </p>
+            <div class="upper-message__date">
+              ${message.date}
             </div>
-            <img src=${message.image} >
-          </div>`
-        return html;
-      } else {
-        var html =
-        `<div class="message" data-message-id=${message.id}>
-            <div class="upper-message">
-              <div class="upper-message__user-name">
-                ${message.user_name}
-              </div>
-              <div class="upper-message__date">
-                ${message.date}
-              </div>
-            </div>
-            <div class="lower-message">
-              <p class="lower-message__content">
-                ${message.content}
-              </p>
-            </div>
-          </div>`
-        return html;
-      }
+          </div>
+          <div class="lower-message">
+            <p class="lower-message__content">
+              ${message.content}
+            </p>
+          </div>
+          ${img}
+        </div>`
+      return html;
     };
 
-    $('.js-form').on('submit', function(){
-      e.preventDefault();
-      var formData = new FormData(this);
-      var url = $(this).attr('action')
-      $.ajax({
+  $('.js-form').on('submit', function(){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action')
+    $.ajax({
       url: url,
       type: "POST",
       data: formData,
@@ -53,7 +35,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(2);
     var html = buildHTML(data);
     $('.messages').append(html);      
     $('form')[0].reset();
