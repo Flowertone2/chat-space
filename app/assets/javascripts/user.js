@@ -7,13 +7,7 @@ $(function(){
     $('#user-search-result').append(html);
   }
 
-    // function appendErrMsgToHTML(msg){
-    //   var html = `
-    //     <div class="chat-group-user clearfix">
-    //       <p class="chat-group-user__name">${msg}</p>
-    //     </div>`;
-    //     $('#user-search-result').append(html);
-    // }
+    
 
   function destroyHTML(user_name, user_id){
   var html = `<div class="chat-group-user">
@@ -41,9 +35,7 @@ $(function(){
           buildHTML(user);
           });
         }
-        // else{
-        //   appendErrMsgToHTML('messageなし');
-        // }
+        
       });
     });
       $(function(){
@@ -60,15 +52,7 @@ $(function(){
               $(this).parent().remove();
               buildHTML(user_name, user_id);
             });
-    // $(function(){
-    //   $("chat-group-user__btn").on("click", function (user_name) {
-    //     console.log(user_name)
-    //     if (users.length !== 0) {
-    //       users.forEach(function(user_name){
-    //         $('#user-search-result').append(html);
-    //       });
-    //     }
-    //   })
+    
       });
     });
   });
