@@ -22,7 +22,7 @@ $(function(){
       return html;
     };
 
-  $('.js-form').on('submit', function(){
+  $('.new_group').on('submit', function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
