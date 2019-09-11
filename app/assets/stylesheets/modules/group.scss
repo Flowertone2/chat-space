@@ -80,6 +80,14 @@ li {
   }
 }
 
+#chat-group-form__input {
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
 .chat-group-user {
   padding: 0 15px;
   line-height: 50px;
