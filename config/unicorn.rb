@@ -35,4 +35,4 @@ end
 
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
-endZZ
+end
