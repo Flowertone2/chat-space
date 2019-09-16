@@ -25,12 +25,12 @@
       = f.label "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right
       #chat-group-user
-    -# %input
-  -# .chat-group-user
-  -#   %input{name: "group[user_ids][]", type: "hidden", value: "${user.id}"}/
-  -#   %p.chat-group-user__name ${user.user_name}
-  -#   .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
-  -#   #user-search-result.remove(html);
+        - group.users.each do |user|
+          .chat-group-user
+            %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}/
+            %p.chat-group-user__name 
+              = user.name
+            .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
